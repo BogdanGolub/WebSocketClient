@@ -85,10 +85,10 @@ public actor WebSocketClient {
         case closed
     }
 
-    public let url: URL
-    public let configuration: Configuration
+    public nonisolated let url: URL
+    public nonisolated let configuration: Configuration
     /// State changes, incoming messages and failures, in order.
-    public let events: AsyncStream<Event>
+    public nonisolated let events: AsyncStream<Event>
 
     public private(set) var state: State = .idle {
         didSet {
